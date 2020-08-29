@@ -1,10 +1,13 @@
+const { releasesMovie, ratingMovie } = require('../index');
+
 let puppeteer = require('puppeteer');
 let browser = null;
 let page = null;
 
-describe('Lazada test', () => {
+describe('Movie test', () => {
 
   // Code này được chạy khi bắt đầu chạy unit test
+  /*
   beforeAll(async() => {
     browser = await puppeteer.launch({ headless: false });
     page = await browser.newPage();
@@ -23,22 +26,17 @@ describe('Lazada test', () => {
     await browser.close();
   });
 
-  // Trước khi chạy mỗi test case, vào trang chủ của lazada
+  // Trước khi chạy mỗi test case, vào trang chủ của IMDb
   beforeEach(async() => {
     await page.goto('https://www.imdb.com');
   });
+  */
 
-  test('Choose menu bar', async() => {
-    //expect.assertions(1);
-    const hambugerMenu = await page.$('#imdbHeader-navDrawerOpen--desktop');
-    await hambugerMenu.click();
-    console.log(hambugerMenu.id);
-    expect(hambugerMenu.id).toBe('imdbHeader-navDrawerOpen--desktop');
+  test('Should crawl movie data', async () => {
+    const url = '';
+    const movie = await releasesMovie();
 
-    // Chờ trang load xong, tìm các phần tử item và đếm nếu đủ 40
-    //await page.waitForNavigation();
-    //const products = await page.$$('div[data-qa-locator=product-item]');
-    //expect(products.length).toBe(40);
+    expect(movie.length).tobe(1);
   });
   
 })

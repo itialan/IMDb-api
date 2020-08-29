@@ -18,8 +18,9 @@ const movies = async (url) => {
     return articles;
   });
 
-  console.log(articles);
+  //console.log(articles);
   await browser.close();
+  return articles;
 };
 
 module.exports = movies;
