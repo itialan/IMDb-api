@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async() => {
+const movies = async () => {
   const browser = await puppeteer.launch();
   console.log('Browser openned');
   const page = await browser.newPage();
@@ -25,4 +25,6 @@ const puppeteer = require('puppeteer');
 
   console.log(articles);
   await browser.close();
-})();
+};
+
+module.exports = movies;
