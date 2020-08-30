@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "image-downloader": "^4.0.1",
+    "mongoose": "^5.10.2",
     "puppeteer": "^5.2.1"
   },
   "devDependencies": {
